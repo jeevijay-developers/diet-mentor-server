@@ -36,7 +36,9 @@ app.use("/api/dietplans", dietPlanRoutes);
 app.use("/api/blogs", blogRoutes);
 app.use("/api/categories", categoryRoutes);
 app.use("/api/uploads", uploadRoutes);
-
+app.use("/api/health-check", (req, res) => {
+  res.status(200).send("Server is healthy");
+});
 // MongoDB connection
 dbConnect();
 
